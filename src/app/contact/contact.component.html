@@ -1,5 +1,29 @@
-<h3>{{nom|uppercase}}</h3>
+<h3>{{nom|ing}}</h3>
+<h2>Ecole : {{ecole}}</h2>
+<ul>
+    <li *ngFor="let etudiant of etudiants">{{etudiant|uppercase}}</li>
+</ul>
 
-<button (click)="display()" >cliquer</button>
+<table align="center" border="2" class="table">
+    <tr><th>Libelle</th><th>Volume horaire</th><th>Enseignant</th></tr>
+    <tr *ngFor="let cours of listeCours">
+        <td>{{cours.libelle}}</td>
+        <td>{{cours.vh}}</td>
+        <td>{{cours.enseignant|ing}}</td>
+    </tr>
+
+</table>
+<button (click)="display()" class="btn btn-success">cliquer</button>
+
+<table align="center" border="2" class="table">
+    <tr><th>ID</th><th>Name</th><th>Username</th><th>Street</th></tr>
+    <tr *ngFor="let user of users">
+        <td>{{user.id}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.address.street}}</td>
+    </tr>
+
+</table>
 
 
